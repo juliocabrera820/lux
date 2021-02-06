@@ -58,6 +58,7 @@ DEPENDENCIES
   httparty
   puma
   slack-ruby-bot
+  slack-ruby-client
 
 BUNDLED WITH
    1.17.3
