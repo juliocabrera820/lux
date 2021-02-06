@@ -8,6 +8,10 @@ module Lux
         title 'find github link'
         desc 'Link to your github profile'
       end
+      command 'find <user> image' do
+        title 'find user image'
+        desc 'It shows github profile image'
+      end
     end
   end
 end
