@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 module Lux
   module Utils
-    class Parser
-      def self.parse_response(response)
-        JSON.parse(response.body)
-      end
+    Parser = lambda do
+      parse_response = ->(response) { JSON.parse(response.body) }
+      { parse_response: parse_response }
     end
   end
 end
