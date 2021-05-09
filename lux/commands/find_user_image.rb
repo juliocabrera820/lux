@@ -2,6 +2,7 @@
 
 require 'lux/services/github'
 require 'lux/utils/parser'
+require 'lux/utils/error_builder'
 require 'lux/utils/block_builder'
 
 module Lux
@@ -11,6 +12,11 @@ module Lux
         github_service = Services::Github.call
         user = match[:user]
         response = github_service[:find_user].call(user)
+        if (response['message'] == "Not Found")
+          block_error = Utils::ErrorBuilder.build_error_block(user)
+          slack_client = Slack::Web::Client.new
+          slack_client.chat_postMessage(channel: data.channel, blocks: block_error)
+        end
         parser = Utils::Parser.call
         user_data = parser[:parse_response].call(response)
         user_image_block = Utils::BlockBuilder.build_user_image_block(user_data)
