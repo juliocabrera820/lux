@@ -11,13 +11,12 @@
 * Add the slackbot to your channel
 
 <p align="left"> 
-  <img src=".github/docs/images/lux.gif" width="900" height="700"/>
+  <img src=".github/docs/images/luxbot.gif" width="900" height="700"/>
 </p>
 
 ## Development
 
-| ℹ | After checking out the repo, run `bundle install` to install dependencies. Then run `rackup` to run the slack bot. |
-|---|:---|
+After checking out the repo, run `bundle install` to install dependencies. Then run `rackup` to run the slack bot.
 
 ## Contributing
 
