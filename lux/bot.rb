@@ -4,7 +4,7 @@ module Lux
       title 'Lux Ruby Bot'
       desc 'This bot shows information about your github profile'
 
-      command 'find <user> github profile' do
+      command 'find <user> profile' do
         title 'find github link'
         desc 'Link to your github profile'
       end
