@@ -4,7 +4,7 @@ require 'lux/services/slack_service'
 
 module Lux
   module Commands
-    class FindUserImage < SlackRubyBot::Commands::Base
+    class FindImage < SlackRubyBot::Commands::Base
       match(/^find (?<user>\w*) image$/) do |_client, data, match|
         user = match[:user]
         Services::SlackService.new(data, user).user_image_response
