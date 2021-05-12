@@ -5,13 +5,13 @@ require 'lux/utils/block_kit_elements'
 module Lux
   module Utils
     class BlockKitBuilder
-      attr_reader :block_kit_elements, :username, :emojis, :cat_image_url
+      attr_reader :block_kit_elements, :username, :emojis, :images
 
       def initialize(username)
         @username = username
         @block_kit_elements = Utils::BlockKitElements
         @emojis = { 'space_invader' => ':space_invader:', 'cry' => ':cry:' }
-        @cat_image_url = 'https://pbs.twimg.com/profile_images/625633822235693056/lNGUneLX_400x400.jpg'
+        @images = { 'cat' => 'https://pbs.twimg.com/profile_images/625633822235693056/lNGUneLX_400x400.jpg' }
       end
 
       def error
@@ -20,9 +20,9 @@ module Lux
             "type": 'context',
             "elements": [
               block_kit_elements.markdown("Hubo un error #{emojis['cry']}"),
-              block_kit_elements.image(cat_image_url, 'cute cat'),
-              block_kit_elements.image(cat_image_url, 'cute cat'),
-              block_kit_elements.image(cat_image_url, 'cute cat'),
+              block_kit_elements.image(cat_image_url, images['cat']),
+              block_kit_elements.image(cat_image_url, images['cat']),
+              block_kit_elements.image(cat_image_url, images['cat']),
               block_kit_elements.markdown("*#{username}* no existe #{emojis['space_invader']}")
             ]
           }
